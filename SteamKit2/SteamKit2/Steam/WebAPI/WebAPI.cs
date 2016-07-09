@@ -5,8 +5,9 @@ using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Reflection;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -63,8 +64,13 @@ namespace SteamKit2
             /// <exception cref="ArgumentNullException">The function name or request method provided were <c>null</c>.</exception>
             /// <exception cref="WebException">An network error occurred when performing the request.</exception>
             /// <exception cref="InvalidDataException">An error occured when parsing the response from the WebAPI.</exception>
-            public KeyValue Call( string func, int version = 1, Dictionary<string, string> args = null, string method = WebRequestMethods.Http.Get, bool secure = false )
+            public KeyValue Call( string func, int version = 1, Dictionary<string, string> args = null, string method = null, bool secure = false )
             {
+                if ( method == null )
+                {
+                    method = HttpMethod.Get.Method;
+                }
+
                 var callTask = asyncInterface.Call( func, version, args, method, secure );
 
                 try
@@ -198,7 +204,7 @@ namespace SteamKit2
         /// </summary>
         public sealed class AsyncInterface : DynamicObject, IDisposable
         {
-            WebClient webClient;
+            HttpClient httpClient;
 
             string iface;
             string apiKey;
@@ -213,7 +219,7 @@ namespace SteamKit2
 
             internal AsyncInterface( string iface, string apiKey )
             {
-                webClient = new WebClient();
+                httpClient = new HttpClient();
 
                 this.iface = iface;
                 this.apiKey = apiKey;
@@ -232,8 +238,13 @@ namespace SteamKit2
             /// <exception cref="ArgumentNullException">The function name or request method provided were <c>null</c>.</exception>
             /// <exception cref="WebException">An network error occurred when performing the request.</exception>
             /// <exception cref="InvalidDataException">An error occured when parsing the response from the WebAPI.</exception>
-            public Task<KeyValue> Call( string func, int version = 1, Dictionary<string, string> args = null, string method = WebRequestMethods.Http.Get, bool secure = false )
+            public async Task<KeyValue> Call( string func, int version = 1, Dictionary<string, string> args = null, string method = null, bool secure = false )
             {
+                if ( method == null )
+                {
+                    method = HttpMethod.Get.Method;
+                }
+
                 if ( func == null )
                     throw new ArgumentNullException( "func" );
 
@@ -250,7 +261,7 @@ namespace SteamKit2
                 urlBuilder.Append( API_ROOT );
                 urlBuilder.AppendFormat( "/{0}/{1}/v{2}", iface, func, version );
 
-                bool isGet = method.Equals( WebRequestMethods.Http.Get, StringComparison.OrdinalIgnoreCase );
+                bool isGet = method.Equals( HttpMethod.Get.Method, StringComparison.OrdinalIgnoreCase );
 
                 if ( isGet )
                 {
@@ -278,21 +289,23 @@ namespace SteamKit2
                     return string.Format( "{0}={1}", key, value );
                 } ) ) );
 
-
-                var task = Task.Factory.StartNew<KeyValue>( () =>
-                {
+                try
+                { 
                     byte[] data = null;
 
                     if ( isGet )
                     {
-                        data = webClient.DownloadData( urlBuilder.ToString() );
+                        data = await httpClient.GetByteArrayAsync( urlBuilder.ToString() ).ConfigureAwait( false );
                     }
                     else
                     {
                         byte[] postData = Encoding.Default.GetBytes( paramBuilder.ToString() );
-
-                        webClient.Headers.Add( HttpRequestHeader.ContentType, "application/x-www-form-urlencoded" );
-                        data = webClient.UploadData( urlBuilder.ToString(), postData );
+                    
+                        var content = new ByteArrayContent( postData );
+                        content.Headers.ContentType = new MediaTypeHeaderValue( "application/x-www-form-urlencoded" );
+                        var response = await httpClient.PostAsync( urlBuilder.ToString(), content ).ConfigureAwait( false );
+                        response.EnsureSuccessStatusCode();
+                        data = await response.Content.ReadAsByteArrayAsync().ConfigureAwait( false );
                     }
 
                     KeyValue kv = new KeyValue();
@@ -313,19 +326,12 @@ namespace SteamKit2
                     }
 
                     return kv;
-                } );
-
-                task.ContinueWith( t =>
+                }
+                catch (Exception ex)
                 {
-                    // we need to observe the exception in this OnlyOnFaulted continuation if our task throws an exception but we're not able to observe it
-                    // (such as when waiting for the task times out, and an exception is thrown later)
-                    // see: http://msdn.microsoft.com/en-us/library/dd997415.aspx
-
-                    DebugLog.WriteLine( "WebAPI", "Threw an unobserved exception: {0}", t.Exception );
-
-                }, TaskContinuationOptions.OnlyOnFaulted );
-
-                return task;
+                    DebugLog.WriteLine( "WebAPI", "Threw an unobserved exception: {0}", ex );
+                    throw;
+                }
             }
 
             /// <summary>
@@ -333,7 +339,7 @@ namespace SteamKit2
             /// </summary>
             public void Dispose()
             {
-                webClient.Dispose();
+                httpClient.Dispose();
             }
 
             /// <summary>
