@@ -8,12 +8,14 @@
 //------------------------------------------------------------------------------
 #pragma warning disable 1591
 
+// Option: light framework (CF/Silverlight) enabled
+    
 // Generated from: steammessages_clientserver.proto
 // Note: requires additional types generated from: steammessages_base.proto
 // Note: requires additional types generated from: encrypted_app_ticket.proto
 namespace SteamKit2.Internal
 {
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientHeartBeat")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientHeartBeat")]
   public partial class CMsgClientHeartBeat : global::ProtoBuf.IExtensible
   {
     public CMsgClientHeartBeat() {}
@@ -23,7 +25,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUDSP2PSessionStarted")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUDSP2PSessionStarted")]
   public partial class CMsgClientUDSP2PSessionStarted : global::ProtoBuf.IExtensible
   {
     public CMsgClientUDSP2PSessionStarted() {}
@@ -51,7 +53,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUDSP2PSessionEnded")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUDSP2PSessionEnded")]
   public partial class CMsgClientUDSP2PSessionEnded : global::ProtoBuf.IExtensible
   {
     public CMsgClientUDSP2PSessionEnded() {}
@@ -151,7 +153,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRegisterAuthTicketWithCM")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRegisterAuthTicketWithCM")]
   public partial class CMsgClientRegisterAuthTicketWithCM : global::ProtoBuf.IExtensible
   {
     public CMsgClientRegisterAuthTicketWithCM() {}
@@ -188,7 +190,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientTicketAuthComplete")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientTicketAuthComplete")]
   public partial class CMsgClientTicketAuthComplete : global::ProtoBuf.IExtensible
   {
     public CMsgClientTicketAuthComplete() {}
@@ -270,7 +272,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLogon")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLogon")]
   public partial class CMsgClientLogon : global::ProtoBuf.IExtensible
   {
     public CMsgClientLogon() {}
@@ -694,7 +696,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLogonResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLogonResponse")]
   public partial class CMsgClientLogonResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientLogonResponse() {}
@@ -902,7 +904,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestWebAPIAuthenticateUserNonce")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestWebAPIAuthenticateUserNonce")]
   public partial class CMsgClientRequestWebAPIAuthenticateUserNonce : global::ProtoBuf.IExtensible
   {
     public CMsgClientRequestWebAPIAuthenticateUserNonce() {}
@@ -912,7 +914,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestWebAPIAuthenticateUserNonceResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestWebAPIAuthenticateUserNonceResponse")]
   public partial class CMsgClientRequestWebAPIAuthenticateUserNonceResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientRequestWebAPIAuthenticateUserNonceResponse() {}
@@ -940,7 +942,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLogOff")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLogOff")]
   public partial class CMsgClientLogOff : global::ProtoBuf.IExtensible
   {
     public CMsgClientLogOff() {}
@@ -950,7 +952,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLoggedOff")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLoggedOff")]
   public partial class CMsgClientLoggedOff : global::ProtoBuf.IExtensible
   {
     public CMsgClientLoggedOff() {}
@@ -969,7 +971,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientCMList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientCMList")]
   public partial class CMsgClientCMList : global::ProtoBuf.IExtensible
   {
     public CMsgClientCMList() {}
@@ -993,7 +995,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientP2PConnectionInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientP2PConnectionInfo")]
   public partial class CMsgClientP2PConnectionInfo : global::ProtoBuf.IExtensible
   {
     public CMsgClientP2PConnectionInfo() {}
@@ -1039,7 +1041,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientP2PConnectionFailInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientP2PConnectionFailInfo")]
   public partial class CMsgClientP2PConnectionFailInfo : global::ProtoBuf.IExtensible
   {
     public CMsgClientP2PConnectionFailInfo() {}
@@ -1085,7 +1087,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetAppOwnershipTicket")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetAppOwnershipTicket")]
   public partial class CMsgClientGetAppOwnershipTicket : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetAppOwnershipTicket() {}
@@ -1104,7 +1106,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetAppOwnershipTicketResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetAppOwnershipTicketResponse")]
   public partial class CMsgClientGetAppOwnershipTicketResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetAppOwnershipTicketResponse() {}
@@ -1141,7 +1143,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientSessionToken")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientSessionToken")]
   public partial class CMsgClientSessionToken : global::ProtoBuf.IExtensible
   {
     public CMsgClientSessionToken() {}
@@ -1160,7 +1162,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGameConnectTokens")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGameConnectTokens")]
   public partial class CMsgClientGameConnectTokens : global::ProtoBuf.IExtensible
   {
     public CMsgClientGameConnectTokens() {}
@@ -1186,7 +1188,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSServerType")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSServerType")]
   public partial class CMsgGSServerType : global::ProtoBuf.IExtensible
   {
     public CMsgGSServerType() {}
@@ -1259,7 +1261,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSStatusReply")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSStatusReply")]
   public partial class CMsgGSStatusReply : global::ProtoBuf.IExtensible
   {
     public CMsgGSStatusReply() {}
@@ -1278,7 +1280,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSPlayerList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSPlayerList")]
   public partial class CMsgGSPlayerList : global::ProtoBuf.IExtensible
   {
     public CMsgGSPlayerList() {}
@@ -1290,7 +1292,7 @@ namespace SteamKit2.Internal
       get { return _players; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Player")]
+  [global::ProtoBuf.ProtoContract(Name=@"Player")]
   public partial class Player : global::ProtoBuf.IExtensible
   {
     public Player() {}
@@ -1332,7 +1334,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSUserPlaying")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSUserPlaying")]
   public partial class CMsgGSUserPlaying : global::ProtoBuf.IExtensible
   {
     public CMsgGSUserPlaying() {}
@@ -1369,7 +1371,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSDisconnectNotice")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSDisconnectNotice")]
   public partial class CMsgGSDisconnectNotice : global::ProtoBuf.IExtensible
   {
     public CMsgGSDisconnectNotice() {}
@@ -1388,7 +1390,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGamesPlayed")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGamesPlayed")]
   public partial class CMsgClientGamesPlayed : global::ProtoBuf.IExtensible
   {
     public CMsgClientGamesPlayed() {}
@@ -1409,7 +1411,7 @@ namespace SteamKit2.Internal
       get { return _client_os_type; }
       set { _client_os_type = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GamePlayed")]
+  [global::ProtoBuf.ProtoContract(Name=@"GamePlayed")]
   public partial class GamePlayed : global::ProtoBuf.IExtensible
   {
     public GamePlayed() {}
@@ -1559,7 +1561,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSApprove")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSApprove")]
   public partial class CMsgGSApprove : global::ProtoBuf.IExtensible
   {
     public CMsgGSApprove() {}
@@ -1587,7 +1589,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSDeny")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSDeny")]
   public partial class CMsgGSDeny : global::ProtoBuf.IExtensible
   {
     public CMsgGSDeny() {}
@@ -1624,7 +1626,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgGSKick")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgGSKick")]
   public partial class CMsgGSKick : global::ProtoBuf.IExtensible
   {
     public CMsgGSKick() {}
@@ -1652,7 +1654,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAuthList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAuthList")]
   public partial class CMsgClientAuthList : global::ProtoBuf.IExtensible
   {
     public CMsgClientAuthList() {}
@@ -1712,7 +1714,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAuthListAck")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAuthListAck")]
   public partial class CMsgClientAuthListAck : global::ProtoBuf.IExtensible
   {
     public CMsgClientAuthListAck() {}
@@ -1745,7 +1747,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendsList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendsList")]
   public partial class CMsgClientFriendsList : global::ProtoBuf.IExtensible
   {
     public CMsgClientFriendsList() {}
@@ -1793,7 +1795,7 @@ namespace SteamKit2.Internal
       get { return _friends_limit_hit; }
       set { _friends_limit_hit = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Friend")]
+  [global::ProtoBuf.ProtoContract(Name=@"Friend")]
   public partial class Friend : global::ProtoBuf.IExtensible
   {
     public Friend() {}
@@ -1826,7 +1828,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendsGroupsList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendsGroupsList")]
   public partial class CMsgClientFriendsGroupsList : global::ProtoBuf.IExtensible
   {
     public CMsgClientFriendsGroupsList() {}
@@ -1863,7 +1865,7 @@ namespace SteamKit2.Internal
       get { return _memberships; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"FriendGroup")]
+  [global::ProtoBuf.ProtoContract(Name=@"FriendGroup")]
   public partial class FriendGroup : global::ProtoBuf.IExtensible
   {
     public FriendGroup() {}
@@ -1891,7 +1893,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"FriendGroupsMembership")]
+  [global::ProtoBuf.ProtoContract(Name=@"FriendGroupsMembership")]
   public partial class FriendGroupsMembership : global::ProtoBuf.IExtensible
   {
     public FriendGroupsMembership() {}
@@ -1924,7 +1926,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPlayerNicknameList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPlayerNicknameList")]
   public partial class CMsgClientPlayerNicknameList : global::ProtoBuf.IExtensible
   {
     public CMsgClientPlayerNicknameList() {}
@@ -1954,7 +1956,7 @@ namespace SteamKit2.Internal
       get { return _nicknames; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"PlayerNickname")]
+  [global::ProtoBuf.ProtoContract(Name=@"PlayerNickname")]
   public partial class PlayerNickname : global::ProtoBuf.IExtensible
   {
     public PlayerNickname() {}
@@ -1987,7 +1989,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetPlayerNickname")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetPlayerNickname")]
   public partial class CMsgClientSetPlayerNickname : global::ProtoBuf.IExtensible
   {
     public CMsgClientSetPlayerNickname() {}
@@ -2015,7 +2017,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetPlayerNicknameResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetPlayerNicknameResponse")]
   public partial class CMsgClientSetPlayerNicknameResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientSetPlayerNicknameResponse() {}
@@ -2034,7 +2036,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLicenseList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLicenseList")]
   public partial class CMsgClientLicenseList : global::ProtoBuf.IExtensible
   {
     public CMsgClientLicenseList() {}
@@ -2055,7 +2057,7 @@ namespace SteamKit2.Internal
       get { return _licenses; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"License")]
+  [global::ProtoBuf.ProtoContract(Name=@"License")]
   public partial class License : global::ProtoBuf.IExtensible
   {
     public License() {}
@@ -2214,7 +2216,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetScore")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetScore")]
   public partial class CMsgClientLBSSetScore : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSSetScore() {}
@@ -2269,7 +2271,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetScoreResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetScoreResponse")]
   public partial class CMsgClientLBSSetScoreResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSSetScoreResponse() {}
@@ -2324,7 +2326,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetUGC")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetUGC")]
   public partial class CMsgClientLBSSetUGC : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSSetUGC() {}
@@ -2361,7 +2363,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetUGCResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSSetUGCResponse")]
   public partial class CMsgClientLBSSetUGCResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSSetUGCResponse() {}
@@ -2380,7 +2382,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSFindOrCreateLB")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSFindOrCreateLB")]
   public partial class CMsgClientLBSFindOrCreateLB : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSFindOrCreateLB() {}
@@ -2435,7 +2437,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSFindOrCreateLBResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSFindOrCreateLBResponse")]
   public partial class CMsgClientLBSFindOrCreateLBResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSFindOrCreateLBResponse() {}
@@ -2499,7 +2501,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSGetLBEntries")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSGetLBEntries")]
   public partial class CMsgClientLBSGetLBEntries : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSGetLBEntries() {}
@@ -2561,7 +2563,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSGetLBEntriesResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientLBSGetLBEntriesResponse")]
   public partial class CMsgClientLBSGetLBEntriesResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientLBSGetLBEntriesResponse() {}
@@ -2591,7 +2593,7 @@ namespace SteamKit2.Internal
       get { return _entries; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Entry")]
+  [global::ProtoBuf.ProtoContract(Name=@"Entry")]
   public partial class Entry : global::ProtoBuf.IExtensible
   {
     public Entry() {}
@@ -2651,7 +2653,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAccountInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAccountInfo")]
   public partial class CMsgClientAccountInfo : global::ProtoBuf.IExtensible
   {
     public CMsgClientAccountInfo() {}
@@ -2769,7 +2771,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppMinutesPlayedData")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppMinutesPlayedData")]
   public partial class CMsgClientAppMinutesPlayedData : global::ProtoBuf.IExtensible
   {
     public CMsgClientAppMinutesPlayedData() {}
@@ -2781,7 +2783,7 @@ namespace SteamKit2.Internal
       get { return _minutes_played; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AppMinutesPlayedData")]
+  [global::ProtoBuf.ProtoContract(Name=@"AppMinutesPlayedData")]
   public partial class AppMinutesPlayedData : global::ProtoBuf.IExtensible
   {
     public AppMinutesPlayedData() {}
@@ -2823,7 +2825,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientIsLimitedAccount")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientIsLimitedAccount")]
   public partial class CMsgClientIsLimitedAccount : global::ProtoBuf.IExtensible
   {
     public CMsgClientIsLimitedAccount() {}
@@ -2869,7 +2871,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestFriendData")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestFriendData")]
   public partial class CMsgClientRequestFriendData : global::ProtoBuf.IExtensible
   {
     public CMsgClientRequestFriendData() {}
@@ -2895,7 +2897,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientChangeStatus")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientChangeStatus")]
   public partial class CMsgClientChangeStatus : global::ProtoBuf.IExtensible
   {
     public CMsgClientChangeStatus() {}
@@ -2959,7 +2961,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgPersonaChangeResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgPersonaChangeResponse")]
   public partial class CMsgPersonaChangeResponse : global::ProtoBuf.IExtensible
   {
     public CMsgPersonaChangeResponse() {}
@@ -2987,7 +2989,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPersonaState")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPersonaState")]
   public partial class CMsgClientPersonaState : global::ProtoBuf.IExtensible
   {
     public CMsgClientPersonaState() {}
@@ -3008,7 +3010,7 @@ namespace SteamKit2.Internal
       get { return _friends; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Friend")]
+  [global::ProtoBuf.ProtoContract(Name=@"Friend")]
   public partial class Friend : global::ProtoBuf.IExtensible
   {
     public Friend() {}
@@ -3221,7 +3223,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendProfileInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendProfileInfo")]
   public partial class CMsgClientFriendProfileInfo : global::ProtoBuf.IExtensible
   {
     public CMsgClientFriendProfileInfo() {}
@@ -3240,7 +3242,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendProfileInfoResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendProfileInfoResponse")]
   public partial class CMsgClientFriendProfileInfoResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientFriendProfileInfoResponse() {}
@@ -3331,7 +3333,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientServerList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientServerList")]
   public partial class CMsgClientServerList : global::ProtoBuf.IExtensible
   {
     public CMsgClientServerList() {}
@@ -3343,7 +3345,7 @@ namespace SteamKit2.Internal
       get { return _servers; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Server")]
+  [global::ProtoBuf.ProtoContract(Name=@"Server")]
   public partial class Server : global::ProtoBuf.IExtensible
   {
     public Server() {}
@@ -3385,7 +3387,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestedClientStats")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestedClientStats")]
   public partial class CMsgClientRequestedClientStats : global::ProtoBuf.IExtensible
   {
     public CMsgClientRequestedClientStats() {}
@@ -3397,7 +3399,7 @@ namespace SteamKit2.Internal
       get { return _stats_to_send; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"StatsToSend")]
+  [global::ProtoBuf.ProtoContract(Name=@"StatsToSend")]
   public partial class StatsToSend : global::ProtoBuf.IExtensible
   {
     public StatsToSend() {}
@@ -3430,7 +3432,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientStat2")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientStat2")]
   public partial class CMsgClientStat2 : global::ProtoBuf.IExtensible
   {
     public CMsgClientStat2() {}
@@ -3442,7 +3444,7 @@ namespace SteamKit2.Internal
       get { return _stat_detail; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"StatDetail")]
+  [global::ProtoBuf.ProtoContract(Name=@"StatDetail")]
   public partial class StatDetail : global::ProtoBuf.IExtensible
   {
     public StatDetail() {}
@@ -3511,7 +3513,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSCreateLobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSCreateLobby")]
   public partial class CMsgClientMMSCreateLobby : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSCreateLobby() {}
@@ -3593,7 +3595,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSCreateLobbyResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSCreateLobbyResponse")]
   public partial class CMsgClientMMSCreateLobbyResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSCreateLobbyResponse() {}
@@ -3630,7 +3632,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSJoinLobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSJoinLobby")]
   public partial class CMsgClientMMSJoinLobby : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSJoinLobby() {}
@@ -3667,7 +3669,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSJoinLobbyResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSJoinLobbyResponse")]
   public partial class CMsgClientMMSJoinLobbyResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSJoinLobbyResponse() {}
@@ -3751,7 +3753,7 @@ namespace SteamKit2.Internal
       get { return _members; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Member")]
+  [global::ProtoBuf.ProtoContract(Name=@"Member")]
   public partial class Member : global::ProtoBuf.IExtensible
   {
     public Member() {}
@@ -3793,7 +3795,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLeaveLobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLeaveLobby")]
   public partial class CMsgClientMMSLeaveLobby : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSLeaveLobby() {}
@@ -3821,7 +3823,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLeaveLobbyResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLeaveLobbyResponse")]
   public partial class CMsgClientMMSLeaveLobbyResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSLeaveLobbyResponse() {}
@@ -3858,7 +3860,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSGetLobbyList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSGetLobbyList")]
   public partial class CMsgClientMMSGetLobbyList : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSGetLobbyList() {}
@@ -3906,7 +3908,7 @@ namespace SteamKit2.Internal
       get { return _filters; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Filter")]
+  [global::ProtoBuf.ProtoContract(Name=@"Filter")]
   public partial class Filter : global::ProtoBuf.IExtensible
   {
     public Filter() {}
@@ -3957,7 +3959,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSGetLobbyListResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSGetLobbyListResponse")]
   public partial class CMsgClientMMSGetLobbyListResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSGetLobbyListResponse() {}
@@ -3987,7 +3989,7 @@ namespace SteamKit2.Internal
       get { return _lobbies; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Lobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"Lobby")]
   public partial class Lobby : global::ProtoBuf.IExtensible
   {
     public Lobby() {}
@@ -4074,7 +4076,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyData")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyData")]
   public partial class CMsgClientMMSSetLobbyData : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSetLobbyData() {}
@@ -4147,7 +4149,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyDataResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyDataResponse")]
   public partial class CMsgClientMMSSetLobbyDataResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSetLobbyDataResponse() {}
@@ -4184,7 +4186,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSGetLobbyData")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSGetLobbyData")]
   public partial class CMsgClientMMSGetLobbyData : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSGetLobbyData() {}
@@ -4212,7 +4214,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLobbyData")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLobbyData")]
   public partial class CMsgClientMMSLobbyData : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSLobbyData() {}
@@ -4305,7 +4307,7 @@ namespace SteamKit2.Internal
       get { return _lobby_cellid; }
       set { _lobby_cellid = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Member")]
+  [global::ProtoBuf.ProtoContract(Name=@"Member")]
   public partial class Member : global::ProtoBuf.IExtensible
   {
     public Member() {}
@@ -4347,7 +4349,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSendLobbyChatMsg")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSendLobbyChatMsg")]
   public partial class CMsgClientMMSSendLobbyChatMsg : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSendLobbyChatMsg() {}
@@ -4393,7 +4395,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLobbyChatMsg")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLobbyChatMsg")]
   public partial class CMsgClientMMSLobbyChatMsg : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSLobbyChatMsg() {}
@@ -4439,7 +4441,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyOwner")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyOwner")]
   public partial class CMsgClientMMSSetLobbyOwner : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSetLobbyOwner() {}
@@ -4476,7 +4478,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyOwnerResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyOwnerResponse")]
   public partial class CMsgClientMMSSetLobbyOwnerResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSetLobbyOwnerResponse() {}
@@ -4513,7 +4515,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyLinked")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyLinked")]
   public partial class CMsgClientMMSSetLobbyLinked : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSetLobbyLinked() {}
@@ -4550,7 +4552,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyGameServer")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSSetLobbyGameServer")]
   public partial class CMsgClientMMSSetLobbyGameServer : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSSetLobbyGameServer() {}
@@ -4605,7 +4607,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLobbyGameServerSet")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSLobbyGameServerSet")]
   public partial class CMsgClientMMSLobbyGameServerSet : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSLobbyGameServerSet() {}
@@ -4660,7 +4662,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSUserJoinedLobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSUserJoinedLobby")]
   public partial class CMsgClientMMSUserJoinedLobby : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSUserJoinedLobby() {}
@@ -4706,7 +4708,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSUserLeftLobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSUserLeftLobby")]
   public partial class CMsgClientMMSUserLeftLobby : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSUserLeftLobby() {}
@@ -4752,7 +4754,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSInviteToLobby")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientMMSInviteToLobby")]
   public partial class CMsgClientMMSInviteToLobby : global::ProtoBuf.IExtensible
   {
     public CMsgClientMMSInviteToLobby() {}
@@ -4789,7 +4791,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUDSInviteToGame")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUDSInviteToGame")]
   public partial class CMsgClientUDSInviteToGame : global::ProtoBuf.IExtensible
   {
     public CMsgClientUDSInviteToGame() {}
@@ -4826,7 +4828,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientChatInvite")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientChatInvite")]
   public partial class CMsgClientChatInvite : global::ProtoBuf.IExtensible
   {
     public CMsgClientChatInvite() {}
@@ -4899,7 +4901,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientConnectionStats")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientConnectionStats")]
   public partial class CMsgClientConnectionStats : global::ProtoBuf.IExtensible
   {
     public CMsgClientConnectionStats() {}
@@ -4922,7 +4924,7 @@ namespace SteamKit2.Internal
       get { return _stats_vconn; }
       set { _stats_vconn = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats_Logon")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats_Logon")]
   public partial class Stats_Logon : global::ProtoBuf.IExtensible
   {
     public Stats_Logon() {}
@@ -4995,7 +4997,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats_UDP")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats_UDP")]
   public partial class Stats_UDP : global::ProtoBuf.IExtensible
   {
     public Stats_UDP() {}
@@ -5050,7 +5052,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats_VConn")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats_VConn")]
   public partial class Stats_VConn : global::ProtoBuf.IExtensible
   {
     public Stats_VConn() {}
@@ -5245,7 +5247,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientServersAvailable")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientServersAvailable")]
   public partial class CMsgClientServersAvailable : global::ProtoBuf.IExtensible
   {
     public CMsgClientServersAvailable() {}
@@ -5266,7 +5268,7 @@ namespace SteamKit2.Internal
       get { return _server_type_for_auth_services; }
       set { _server_type_for_auth_services = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Server_Types_Available")]
+  [global::ProtoBuf.ProtoContract(Name=@"Server_Types_Available")]
   public partial class Server_Types_Available : global::ProtoBuf.IExtensible
   {
     public Server_Types_Available() {}
@@ -5299,7 +5301,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetUserStats")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetUserStats")]
   public partial class CMsgClientGetUserStats : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetUserStats() {}
@@ -5345,7 +5347,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetUserStatsResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetUserStatsResponse")]
   public partial class CMsgClientGetUserStatsResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetUserStatsResponse() {}
@@ -5400,7 +5402,7 @@ namespace SteamKit2.Internal
       get { return _achievement_blocks; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats")]
   public partial class Stats : global::ProtoBuf.IExtensible
   {
     public Stats() {}
@@ -5428,7 +5430,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Achievement_Blocks")]
+  [global::ProtoBuf.ProtoContract(Name=@"Achievement_Blocks")]
   public partial class Achievement_Blocks : global::ProtoBuf.IExtensible
   {
     public Achievement_Blocks() {}
@@ -5459,7 +5461,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientStoreUserStatsResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientStoreUserStatsResponse")]
   public partial class CMsgClientStoreUserStatsResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientStoreUserStatsResponse() {}
@@ -5507,7 +5509,7 @@ namespace SteamKit2.Internal
       get { return _stats_out_of_date; }
       set { _stats_out_of_date = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats_Failed_Validation")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats_Failed_Validation")]
   public partial class Stats_Failed_Validation : global::ProtoBuf.IExtensible
   {
     public Stats_Failed_Validation() {}
@@ -5540,7 +5542,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientStoreUserStats2")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientStoreUserStats2")]
   public partial class CMsgClientStoreUserStats2 : global::ProtoBuf.IExtensible
   {
     public CMsgClientStoreUserStats2() {}
@@ -5597,7 +5599,7 @@ namespace SteamKit2.Internal
       get { return _stats; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats")]
   public partial class Stats : global::ProtoBuf.IExtensible
   {
     public Stats() {}
@@ -5630,7 +5632,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientStatsUpdated")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientStatsUpdated")]
   public partial class CMsgClientStatsUpdated : global::ProtoBuf.IExtensible
   {
     public CMsgClientStatsUpdated() {}
@@ -5669,7 +5671,7 @@ namespace SteamKit2.Internal
       get { return _updated_stats; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Updated_Stats")]
+  [global::ProtoBuf.ProtoContract(Name=@"Updated_Stats")]
   public partial class Updated_Stats : global::ProtoBuf.IExtensible
   {
     public Updated_Stats() {}
@@ -5702,7 +5704,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientStoreUserStats")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientStoreUserStats")]
   public partial class CMsgClientStoreUserStats : global::ProtoBuf.IExtensible
   {
     public CMsgClientStoreUserStats() {}
@@ -5732,7 +5734,7 @@ namespace SteamKit2.Internal
       get { return _stats_to_store; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Stats_To_Store")]
+  [global::ProtoBuf.ProtoContract(Name=@"Stats_To_Store")]
   public partial class Stats_To_Store : global::ProtoBuf.IExtensible
   {
     public Stats_To_Store() {}
@@ -5765,7 +5767,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientDetails")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientDetails")]
   public partial class CMsgClientGetClientDetails : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetClientDetails() {}
@@ -5775,7 +5777,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientReportOverlayDetourFailure")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientReportOverlayDetourFailure")]
   public partial class CMsgClientReportOverlayDetourFailure : global::ProtoBuf.IExtensible
   {
     public CMsgClientReportOverlayDetourFailure() {}
@@ -5792,7 +5794,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientDetailsResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientDetailsResponse")]
   public partial class CMsgClientGetClientDetailsResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetClientDetailsResponse() {}
@@ -5867,7 +5869,7 @@ namespace SteamKit2.Internal
       get { return _games_running; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Game")]
+  [global::ProtoBuf.ProtoContract(Name=@"Game")]
   public partial class Game : global::ProtoBuf.IExtensible
   {
     public Game() {}
@@ -5909,7 +5911,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientAppList")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientAppList")]
   public partial class CMsgClientGetClientAppList : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetClientAppList() {}
@@ -5964,7 +5966,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientAppListResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientGetClientAppListResponse")]
   public partial class CMsgClientGetClientAppListResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientGetClientAppListResponse() {}
@@ -5985,7 +5987,7 @@ namespace SteamKit2.Internal
       get { return _bytes_available; }
       set { _bytes_available = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"App")]
+  [global::ProtoBuf.ProtoContract(Name=@"App")]
   public partial class App : global::ProtoBuf.IExtensible
   {
     public App() {}
@@ -6123,7 +6125,7 @@ namespace SteamKit2.Internal
       get { return _dlcs; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"DLC")]
+  [global::ProtoBuf.ProtoContract(Name=@"DLC")]
   public partial class DLC : global::ProtoBuf.IExtensible
   {
     public DLC() {}
@@ -6161,7 +6163,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientInstallClientApp")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientInstallClientApp")]
   public partial class CMsgClientInstallClientApp : global::ProtoBuf.IExtensible
   {
     public CMsgClientInstallClientApp() {}
@@ -6180,7 +6182,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientInstallClientAppResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientInstallClientAppResponse")]
   public partial class CMsgClientInstallClientAppResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientInstallClientAppResponse() {}
@@ -6199,7 +6201,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUninstallClientApp")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUninstallClientApp")]
   public partial class CMsgClientUninstallClientApp : global::ProtoBuf.IExtensible
   {
     public CMsgClientUninstallClientApp() {}
@@ -6218,7 +6220,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUninstallClientAppResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUninstallClientAppResponse")]
   public partial class CMsgClientUninstallClientAppResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUninstallClientAppResponse() {}
@@ -6237,7 +6239,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetClientAppUpdateState")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetClientAppUpdateState")]
   public partial class CMsgClientSetClientAppUpdateState : global::ProtoBuf.IExtensible
   {
     public CMsgClientSetClientAppUpdateState() {}
@@ -6265,7 +6267,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetClientAppUpdateStateResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientSetClientAppUpdateStateResponse")]
   public partial class CMsgClientSetClientAppUpdateStateResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientSetClientAppUpdateStateResponse() {}
@@ -6284,7 +6286,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadFileRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadFileRequest")]
   public partial class CMsgClientUFSUploadFileRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSUploadFileRequest() {}
@@ -6384,7 +6386,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadFileResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadFileResponse")]
   public partial class CMsgClientUFSUploadFileResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSUploadFileResponse() {}
@@ -6466,7 +6468,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadCommit")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadCommit")]
   public partial class CMsgClientUFSUploadCommit : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSUploadCommit() {}
@@ -6478,7 +6480,7 @@ namespace SteamKit2.Internal
       get { return _files; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"File")]
+  [global::ProtoBuf.ProtoContract(Name=@"File")]
   public partial class File : global::ProtoBuf.IExtensible
   {
     public File() {}
@@ -6538,7 +6540,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadCommitResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadCommitResponse")]
   public partial class CMsgClientUFSUploadCommitResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSUploadCommitResponse() {}
@@ -6550,7 +6552,7 @@ namespace SteamKit2.Internal
       get { return _files; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"File")]
+  [global::ProtoBuf.ProtoContract(Name=@"File")]
   public partial class File : global::ProtoBuf.IExtensible
   {
     public File() {}
@@ -6592,7 +6594,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSFileChunk")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSFileChunk")]
   public partial class CMsgClientUFSFileChunk : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSFileChunk() {}
@@ -6629,7 +6631,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSTransferHeartbeat")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSTransferHeartbeat")]
   public partial class CMsgClientUFSTransferHeartbeat : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSTransferHeartbeat() {}
@@ -6639,7 +6641,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadFileFinished")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSUploadFileFinished")]
   public partial class CMsgClientUFSUploadFileFinished : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSUploadFileFinished() {}
@@ -6667,7 +6669,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDeleteFileRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDeleteFileRequest")]
   public partial class CMsgClientUFSDeleteFileRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSDeleteFileRequest() {}
@@ -6704,7 +6706,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDeleteFileResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDeleteFileResponse")]
   public partial class CMsgClientUFSDeleteFileResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSDeleteFileResponse() {}
@@ -6732,7 +6734,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetFileListForApp")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetFileListForApp")]
   public partial class CMsgClientUFSGetFileListForApp : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSGetFileListForApp() {}
@@ -6758,7 +6760,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetFileListForAppResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetFileListForAppResponse")]
   public partial class CMsgClientUFSGetFileListForAppResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSGetFileListForAppResponse() {}
@@ -6777,7 +6779,7 @@ namespace SteamKit2.Internal
       get { return _path_prefixes; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"File")]
+  [global::ProtoBuf.ProtoContract(Name=@"File")]
   public partial class File : global::ProtoBuf.IExtensible
   {
     public File() {}
@@ -6864,7 +6866,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDownloadRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDownloadRequest")]
   public partial class CMsgClientUFSDownloadRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSDownloadRequest() {}
@@ -6901,7 +6903,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDownloadResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSDownloadResponse")]
   public partial class CMsgClientUFSDownloadResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSDownloadResponse() {}
@@ -7028,7 +7030,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSLoginRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSLoginRequest")]
   public partial class CMsgClientUFSLoginRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSLoginRequest() {}
@@ -7063,7 +7065,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSLoginResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSLoginResponse")]
   public partial class CMsgClientUFSLoginResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSLoginResponse() {}
@@ -7082,7 +7084,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestEncryptedAppTicket")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestEncryptedAppTicket")]
   public partial class CMsgClientRequestEncryptedAppTicket : global::ProtoBuf.IExtensible
   {
     public CMsgClientRequestEncryptedAppTicket() {}
@@ -7110,7 +7112,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestEncryptedAppTicketResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRequestEncryptedAppTicketResponse")]
   public partial class CMsgClientRequestEncryptedAppTicketResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientRequestEncryptedAppTicketResponse() {}
@@ -7147,7 +7149,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientWalletInfoUpdate")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientWalletInfoUpdate")]
   public partial class CMsgClientWalletInfoUpdate : global::ProtoBuf.IExtensible
   {
     public CMsgClientWalletInfoUpdate() {}
@@ -7193,7 +7195,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoUpdate")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoUpdate")]
   public partial class CMsgClientAppInfoUpdate : global::ProtoBuf.IExtensible
   {
     public CMsgClientAppInfoUpdate() {}
@@ -7221,7 +7223,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoChanges")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoChanges")]
   public partial class CMsgClientAppInfoChanges : global::ProtoBuf.IExtensible
   {
     public CMsgClientAppInfoChanges() {}
@@ -7256,7 +7258,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoRequest")]
   public partial class CMsgClientAppInfoRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientAppInfoRequest() {}
@@ -7277,7 +7279,7 @@ namespace SteamKit2.Internal
       get { return _supports_batches; }
       set { _supports_batches = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"App")]
+  [global::ProtoBuf.ProtoContract(Name=@"App")]
   public partial class App : global::ProtoBuf.IExtensible
   {
     public App() {}
@@ -7317,7 +7319,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAppInfoResponse")]
   public partial class CMsgClientAppInfoResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientAppInfoResponse() {}
@@ -7345,7 +7347,7 @@ namespace SteamKit2.Internal
       get { return _apps_pending; }
       set { _apps_pending = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"App")]
+  [global::ProtoBuf.ProtoContract(Name=@"App")]
   public partial class App : global::ProtoBuf.IExtensible
   {
     public App() {}
@@ -7375,7 +7377,7 @@ namespace SteamKit2.Internal
       get { return _sections; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Section")]
+  [global::ProtoBuf.ProtoContract(Name=@"Section")]
   public partial class Section : global::ProtoBuf.IExtensible
   {
     public Section() {}
@@ -7413,7 +7415,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPackageInfoRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPackageInfoRequest")]
   public partial class CMsgClientPackageInfoRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientPackageInfoRequest() {}
@@ -7439,7 +7441,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPackageInfoResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPackageInfoResponse")]
   public partial class CMsgClientPackageInfoResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientPackageInfoResponse() {}
@@ -7467,7 +7469,7 @@ namespace SteamKit2.Internal
       get { return _packages_pending; }
       set { _packages_pending = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Package")]
+  [global::ProtoBuf.ProtoContract(Name=@"Package")]
   public partial class Package : global::ProtoBuf.IExtensible
   {
     public Package() {}
@@ -7518,7 +7520,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSChangesSinceRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSChangesSinceRequest")]
   public partial class CMsgClientPICSChangesSinceRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientPICSChangesSinceRequest() {}
@@ -7573,7 +7575,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSChangesSinceResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSChangesSinceResponse")]
   public partial class CMsgClientPICSChangesSinceResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientPICSChangesSinceResponse() {}
@@ -7637,7 +7639,7 @@ namespace SteamKit2.Internal
       get { return _force_full_package_update; }
       set { _force_full_package_update = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"PackageChange")]
+  [global::ProtoBuf.ProtoContract(Name=@"PackageChange")]
   public partial class PackageChange : global::ProtoBuf.IExtensible
   {
     public PackageChange() {}
@@ -7674,7 +7676,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AppChange")]
+  [global::ProtoBuf.ProtoContract(Name=@"AppChange")]
   public partial class AppChange : global::ProtoBuf.IExtensible
   {
     public AppChange() {}
@@ -7716,7 +7718,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSProductInfoRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSProductInfoRequest")]
   public partial class CMsgClientPICSProductInfoRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientPICSProductInfoRequest() {}
@@ -7753,7 +7755,7 @@ namespace SteamKit2.Internal
       get { return _num_prev_failed; }
       set { _num_prev_failed = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AppInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"AppInfo")]
   public partial class AppInfo : global::ProtoBuf.IExtensible
   {
     public AppInfo() {}
@@ -7790,7 +7792,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"PackageInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"PackageInfo")]
   public partial class PackageInfo : global::ProtoBuf.IExtensible
   {
     public PackageInfo() {}
@@ -7823,7 +7825,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSProductInfoResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSProductInfoResponse")]
   public partial class CMsgClientPICSProductInfoResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientPICSProductInfoResponse() {}
@@ -7892,7 +7894,7 @@ namespace SteamKit2.Internal
       get { return _http_host; }
       set { _http_host = value; }
     }
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AppInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"AppInfo")]
   public partial class AppInfo : global::ProtoBuf.IExtensible
   {
     public AppInfo() {}
@@ -7965,7 +7967,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"PackageInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"PackageInfo")]
   public partial class PackageInfo : global::ProtoBuf.IExtensible
   {
     public PackageInfo() {}
@@ -8034,7 +8036,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSAccessTokenRequest")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSAccessTokenRequest")]
   public partial class CMsgClientPICSAccessTokenRequest : global::ProtoBuf.IExtensible
   {
     public CMsgClientPICSAccessTokenRequest() {}
@@ -8058,7 +8060,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSAccessTokenResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientPICSAccessTokenResponse")]
   public partial class CMsgClientPICSAccessTokenResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientPICSAccessTokenResponse() {}
@@ -8091,7 +8093,7 @@ namespace SteamKit2.Internal
       get { return _app_denied_tokens; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"PackageToken")]
+  [global::ProtoBuf.ProtoContract(Name=@"PackageToken")]
   public partial class PackageToken : global::ProtoBuf.IExtensible
   {
     public PackageToken() {}
@@ -8119,7 +8121,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AppToken")]
+  [global::ProtoBuf.ProtoContract(Name=@"AppToken")]
   public partial class AppToken : global::ProtoBuf.IExtensible
   {
     public AppToken() {}
@@ -8152,7 +8154,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetUGCDetails")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetUGCDetails")]
   public partial class CMsgClientUFSGetUGCDetails : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSGetUGCDetails() {}
@@ -8171,7 +8173,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetUGCDetailsResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetUGCDetailsResponse")]
   public partial class CMsgClientUFSGetUGCDetailsResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSGetUGCDetailsResponse() {}
@@ -8262,7 +8264,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetSingleFileInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetSingleFileInfo")]
   public partial class CMsgClientUFSGetSingleFileInfo : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSGetSingleFileInfo() {}
@@ -8290,7 +8292,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetSingleFileInfoResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSGetSingleFileInfoResponse")]
   public partial class CMsgClientUFSGetSingleFileInfoResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSGetSingleFileInfoResponse() {}
@@ -8363,7 +8365,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSShareFile")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSShareFile")]
   public partial class CMsgClientUFSShareFile : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSShareFile() {}
@@ -8391,7 +8393,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSShareFileResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientUFSShareFileResponse")]
   public partial class CMsgClientUFSShareFileResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientUFSShareFileResponse() {}
@@ -8419,7 +8421,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientNewLoginKey")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientNewLoginKey")]
   public partial class CMsgClientNewLoginKey : global::ProtoBuf.IExtensible
   {
     public CMsgClientNewLoginKey() {}
@@ -8447,7 +8449,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientNewLoginKeyAccepted")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientNewLoginKeyAccepted")]
   public partial class CMsgClientNewLoginKeyAccepted : global::ProtoBuf.IExtensible
   {
     public CMsgClientNewLoginKeyAccepted() {}
@@ -8466,7 +8468,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetClanOfficers")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetClanOfficers")]
   public partial class CMsgClientAMGetClanOfficers : global::ProtoBuf.IExtensible
   {
     public CMsgClientAMGetClanOfficers() {}
@@ -8485,7 +8487,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetClanOfficersResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetClanOfficersResponse")]
   public partial class CMsgClientAMGetClanOfficersResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientAMGetClanOfficersResponse() {}
@@ -8522,7 +8524,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetPersonaNameHistory")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetPersonaNameHistory")]
   public partial class CMsgClientAMGetPersonaNameHistory : global::ProtoBuf.IExtensible
   {
     public CMsgClientAMGetPersonaNameHistory() {}
@@ -8543,7 +8545,7 @@ namespace SteamKit2.Internal
       get { return _Ids; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"IdInstance")]
+  [global::ProtoBuf.ProtoContract(Name=@"IdInstance")]
   public partial class IdInstance : global::ProtoBuf.IExtensible
   {
     public IdInstance() {}
@@ -8567,7 +8569,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetPersonaNameHistoryResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAMGetPersonaNameHistoryResponse")]
   public partial class CMsgClientAMGetPersonaNameHistoryResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientAMGetPersonaNameHistoryResponse() {}
@@ -8579,7 +8581,7 @@ namespace SteamKit2.Internal
       get { return _responses; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"NameTableInstance")]
+  [global::ProtoBuf.ProtoContract(Name=@"NameTableInstance")]
   public partial class NameTableInstance : global::ProtoBuf.IExtensible
   {
     public NameTableInstance() {}
@@ -8609,7 +8611,7 @@ namespace SteamKit2.Internal
       get { return _names; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"NameInstance")]
+  [global::ProtoBuf.ProtoContract(Name=@"NameInstance")]
   public partial class NameInstance : global::ProtoBuf.IExtensible
   {
     public NameInstance() {}
@@ -8647,7 +8649,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientDeregisterWithServer")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientDeregisterWithServer")]
   public partial class CMsgClientDeregisterWithServer : global::ProtoBuf.IExtensible
   {
     public CMsgClientDeregisterWithServer() {}
@@ -8675,7 +8677,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientClanState")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientClanState")]
   public partial class CMsgClientClanState : global::ProtoBuf.IExtensible
   {
     public CMsgClientClanState() {}
@@ -8739,7 +8741,7 @@ namespace SteamKit2.Internal
       get { return _announcements; }
     }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"NameInfo")]
+  [global::ProtoBuf.ProtoContract(Name=@"NameInfo")]
   public partial class NameInfo : global::ProtoBuf.IExtensible
   {
     public NameInfo() {}
@@ -8767,7 +8769,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"UserCounts")]
+  [global::ProtoBuf.ProtoContract(Name=@"UserCounts")]
   public partial class UserCounts : global::ProtoBuf.IExtensible
   {
     public UserCounts() {}
@@ -8813,7 +8815,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Event")]
+  [global::ProtoBuf.ProtoContract(Name=@"Event")]
   public partial class Event : global::ProtoBuf.IExtensible
   {
     public Event() {}
@@ -8873,7 +8875,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendMsg")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendMsg")]
   public partial class CMsgClientFriendMsg : global::ProtoBuf.IExtensible
   {
     public CMsgClientFriendMsg() {}
@@ -8919,7 +8921,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendMsgIncoming")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientFriendMsgIncoming")]
   public partial class CMsgClientFriendMsgIncoming : global::ProtoBuf.IExtensible
   {
     public CMsgClientFriendMsgIncoming() {}
@@ -8974,7 +8976,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAddFriend")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAddFriend")]
   public partial class CMsgClientAddFriend : global::ProtoBuf.IExtensible
   {
     public CMsgClientAddFriend() {}
@@ -9002,7 +9004,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientAddFriendResponse")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientAddFriendResponse")]
   public partial class CMsgClientAddFriendResponse : global::ProtoBuf.IExtensible
   {
     public CMsgClientAddFriendResponse() {}
@@ -9039,7 +9041,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientRemoveFriend")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientRemoveFriend")]
   public partial class CMsgClientRemoveFriend : global::ProtoBuf.IExtensible
   {
     public CMsgClientRemoveFriend() {}
@@ -9058,7 +9060,7 @@ namespace SteamKit2.Internal
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"CMsgClientHideFriend")]
+  [global::ProtoBuf.ProtoContract(Name=@"CMsgClientHideFriend")]
   public partial class CMsgClientHideFriend : global::ProtoBuf.IExtensible
   {
     public CMsgClientHideFriend() {}
