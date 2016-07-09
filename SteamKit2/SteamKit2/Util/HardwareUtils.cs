@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+#if WMI_AVAILABLE
 using System.Management;
+#endif
 using System.Net.NetworkInformation;
 using System.Text;
 using Microsoft.Win32;
@@ -102,6 +104,7 @@ namespace SteamKit2
 
         public override byte[] GetDiskId()
         {
+#if WMI_AVAILABLE
             var activePartition = WmiQuery(
                 @"SELECT DiskIndex FROM Win32_DiskPartition
                   WHERE Bootable = 1"
@@ -132,9 +135,13 @@ namespace SteamKit2
             }
 
             return Encoding.UTF8.GetBytes( serialNumber );
+#else
+            return base.GetDiskId();
+            
+#endif
         }
 
-
+#if WMI_AVAILABLE
         IEnumerable<ManagementObject> WmiQuery( string queryFormat, params object[] args )
         {
             string query = string.Format( queryFormat, args );
@@ -150,6 +157,7 @@ namespace SteamKit2
                 return Enumerable.Empty<ManagementObject>();
             }
         }
+#endif
     }
 
     class LinuxInfoProvider : DefaultInfoProvider
