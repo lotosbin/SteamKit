@@ -15,7 +15,7 @@
         <copyright />
         <tags>steam networking steamkit</tags>
         <dependencies>
-            <dependency id="protobuf-net" version="[2.0.0.668]" />
+            <dependency id="protobuf-net" version="[2.1.0]" />
         </dependencies>
     </metadata>
     <files>

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using ProtoBuf;
 using SteamKit2.Internal;
 
@@ -66,7 +67,7 @@ namespace SteamKit2
 
                 var rpcName = string.Format( "{0}.{1}#{2}", serviceName, methodName, version );
 
-                var method = typeof(SteamUnifiedMessages).GetMethod( "SendMessage" ).MakeGenericMethod( message.GetType() );
+                var method = typeof(SteamUnifiedMessages).GetTypeInfo().GetMethod( "SendMessage" ).MakeGenericMethod( message.GetType() );
                 var result = method.Invoke( this.steamUnifiedMessages, new[] { rpcName, message, isNotification } );
                 return (AsyncJob<ServiceMethodResponse>)result;
             }

@@ -257,7 +257,7 @@ namespace SteamKit2
             }
             catch ( SocketException e )
             {
-                DebugLog.WriteLine("UdpConnection", "Critical socket failure: " + e.ErrorCode);
+                DebugLog.WriteLine("UdpConnection", "Critical socket failure: " + e.Message);
 
                 state = (int)State.Disconnected;
                 return;
@@ -451,7 +451,7 @@ namespace SteamKit2
                 }
                 catch ( SocketException e )
                 {
-                    DebugLog.WriteLine("UdpConnection", "Critical socket failure: " + e.ErrorCode);
+                    DebugLog.WriteLine("UdpConnection", "Critical socket failure: " + e.Message);
 
                     state = (int)State.Disconnected;
                     break;

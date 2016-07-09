@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -39,113 +40,21 @@ namespace SteamKit2
 
         public static EOSType GetOSType()
         {
-            var osVer = Environment.OSVersion;
-            var ver = osVer.Version;
-
-            switch ( osVer.Platform )
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                case PlatformID.Win32Windows:
-                    {
-                        switch ( ver.Minor )
-                        {
-                            case 0:
-                                return EOSType.Win95;
-
-                            case 10:
-                                return EOSType.Win98;
-
-                            case 90:
-                                return EOSType.WinME;
-
-                            default:
-                                return EOSType.WinUnknown;
-                        }
-                    }
-
-                case PlatformID.Win32NT:
-                    {
-                        switch ( ver.Major )
-                        {
-                            case 4:
-                                return EOSType.WinNT;
-
-                            case 5:
-                                switch ( ver.Minor )
-                                {
-                                    case 0:
-                                        return EOSType.Win200;
-
-                                    case 1:
-                                        return EOSType.WinXP;
-
-                                    case 2:
-                                        // Assume nobody runs Windows XP Professional x64 Edition
-                                        // It's an edition of Windows Server 2003 anyway.
-                                        return EOSType.Win2003;
-                                }
-
-                                goto default;
-
-                            case 6:
-                                switch ( ver.Minor )
-                                {
-                                    case 0:
-                                        return EOSType.WinVista; // Also Server 2008
-
-                                    case 1:
-                                        return EOSType.Win7; // Also Server 2008 R2
-
-                                    case 2:
-                                        return EOSType.Win8; // Also Server 2012
-
-                                    // Note: The OSVersion property reports the same version number (6.2.0.0) for both Windows 8 and Windows 8.1.- http://msdn.microsoft.com/en-us/library/system.environment.osversion(v=vs.110).aspx
-                                    // In practice, this will only get hit if the application targets Windows 8.1 in the app manifest.
-                                    // See http://msdn.microsoft.com/en-us/library/windows/desktop/dn481241(v=vs.85).aspx for more info.
-                                    case 3:
-                                        return EOSType.Win81; // Also Server 2012 R2
-                                }
-
-                                goto default;
-
-                            default:
-                                return EOSType.WinUnknown;
-                        }
-                    }
-
-                case PlatformID.Unix:
-                    {
-                        if ( IsRunningOnDarwin() )
-                        {
-                            switch ( ver.Major )
-                            {
-                                case 11:
-                                    return EOSType.MacOS107; // "Lion"
-
-                                case 12:
-                                    return EOSType.MacOS108; // "Mountain Lion"
-
-                                case 13:
-                                    return EOSType.MacOS109; // "Mavericks"
-
-                                case 14:
-                                   return EOSType.MacOS1010; // "Yosemite"
-
-                                default:
-                                    return EOSType.MacOSUnknown;
-                            }
-                        }
-                        else
-                        {
-                            return EOSType.LinuxUnknown;
-                        }
-                    }
-
-                // Not currently used by Mono. Maybe .NET Core will use this someday?
-                case PlatformID.MacOSX:
-                    return EOSType.MacOSUnknown;
-
-                default:
-                    return EOSType.Unknown;
+                return EOSType.WinUnknown;
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                return EOSType.MacOSUnknown;
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                return EOSType.LinuxUnknown;
+            }
+            else
+            {
+                return EOSType.Unknown;
             }
         }
 
@@ -184,7 +93,7 @@ namespace SteamKit2
         public static T[] GetAttributes<T>( this Type type, bool inherit = false )
             where T : Attribute
         {
-            return type.GetCustomAttributes( typeof( T ), inherit ) as T[];
+            return type.GetTypeInfo().GetCustomAttributes( typeof( T ), inherit ) as T[];
         }
     }
 

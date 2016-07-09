@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -19,13 +20,6 @@ namespace SteamKit2
     /// </summary>
     public sealed class WebAPI
     {
-        static WebAPI()
-        {
-            // stop WebClient from inserting this header into requests
-            // the backend doesn't like it
-            ServicePointManager.Expect100Continue = false;
-        }
-
         /// <summary>
         /// Represents a single interface that exists within the Web API.
         /// This is a dynamic object that allows function calls to interfaces with minimal code.
@@ -78,7 +72,7 @@ namespace SteamKit2
                     bool completed = callTask.Wait( Timeout );
 
                     if ( !completed )
-                        throw new WebException( "The WebAPI call timed out", WebExceptionStatus.Timeout );
+                        throw new TimeoutException( "The WebAPI call timed out" );
                 }
                 catch ( AggregateException ex )
                 {
@@ -166,29 +160,11 @@ namespace SteamKit2
                     bool completed = resultTask.Wait( Timeout );
 
                     if ( !completed )
-                        throw new WebException( "The WebAPI call timed out", WebExceptionStatus.Timeout );
+                        throw new TimeoutException( "The WebAPI call timed out" );
                 }
-                catch ( AggregateException ex )
+                catch ( AggregateException ex ) when ( ex.InnerException != null )
                 {
-                    // because we're internally using the async interface, any WebExceptions thrown will
-                    // be wrapped inside an AggregateException.
-                    // since callers don't expect this, we need to unwrap and rethrow the inner exception
-
-                    var innerEx = ex.InnerException;
-
-                    // preserve stack trace when rethrowing inner exception
-                    // see: http://stackoverflow.com/a/4557183/139147
-
-                    var prepFunc = typeof( Exception ).GetMethod( "PrepForRemoting", BindingFlags.NonPublic | BindingFlags.Instance );
-                    if ( prepFunc != null )
-                    {
-                        // TODO: we can't use this on mono!
-                        // .NET 4.5 comes with the machinery to preserve a stack trace: ExceptionDispatchInfo, but we target 4.0
-
-                        prepFunc.Invoke( innerEx, new object[ 0 ] );
-                    }
-
-                    throw innerEx;
+                    ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
                 }
 
                 result = resultTask.Result;
@@ -299,7 +275,7 @@ namespace SteamKit2
                     }
                     else
                     {
-                        byte[] postData = Encoding.Default.GetBytes( paramBuilder.ToString() );
+                        byte[] postData = Encoding.ASCII.GetBytes( paramBuilder.ToString() );
                     
                         var content = new ByteArrayContent( postData );
                         content.Headers.ContentType = new MediaTypeHeaderValue( "application/x-www-form-urlencoded" );
@@ -388,7 +364,7 @@ namespace SteamKit2
 
                 var apiArgs = new Dictionary<string, string>();
 
-                string requestMethod = WebRequestMethods.Http.Get;
+                string requestMethod = HttpMethod.Get.Method;
                 bool secure = false;
 
                 // convert named arguments into key value pairs

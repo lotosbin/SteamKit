@@ -60,7 +60,7 @@ namespace SteamKit2
             this.AddHandler( new SteamTrading() );
             this.AddHandler( new SteamUnifiedMessages() );
             this.AddHandler( new SteamScreenshots() );
-
+            
             using ( var process = Process.GetCurrentProcess() )
             {
                 this.processStartTime = process.StartTime;
@@ -83,7 +83,7 @@ namespace SteamKit2
         }
 
 
-        #region Handlers
+#region Handlers
         /// <summary>
         /// Adds a new handler to the internal list of message handlers.
         /// </summary>
@@ -135,10 +135,10 @@ namespace SteamKit2
 
             return null;
         }
-        #endregion
+#endregion
 
 
-        #region Callbacks
+#region Callbacks
         /// <summary>
         /// Gets the next callback object in the queue.
         /// This function does not dequeue the callback, you must call FreeLastCallback after processing it.
@@ -286,10 +286,10 @@ namespace SteamKit2
 
             jobManager.TryCompleteJob( msg.JobID, msg );
         }
-        #endregion
+#endregion
 
 
-        #region Jobs
+#region Jobs
         /// <summary>
         /// Returns the next available JobID for job based messages.
         /// This function is thread-safe.
@@ -310,7 +310,7 @@ namespace SteamKit2
         {
             jobManager.StartJob( job );
         }
-        #endregion
+#endregion
 
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace SteamKit2
                 if (socket.Connected)
                 {
                     socket.Shutdown(SocketShutdown.Both);
-                    socket.Disconnect(true);
+                    socket.Dispose();
                 }
             }
             catch
@@ -84,8 +84,11 @@ namespace SteamKit2
                     netStream = null;
                 }
 
-                socket.Close();
-                socket = null;
+                if (socket != null)
+                {
+                    socket.Dispose();
+                    socket = null;
+                }
 
                 netFilter = null;
             }
@@ -145,24 +148,28 @@ namespace SteamKit2
                 return;
             }
 
-            var asyncResult = socket.BeginConnect(destination, null, null);
-
-            if (WaitHandle.WaitAny(new WaitHandle[] { asyncResult.AsyncWaitHandle, cancellationToken.Token.WaitHandle }, timeout) == 0)
+            var args = new SocketAsyncEventArgs { RemoteEndPoint = destination };
+            var handle = new ManualResetEvent(initialState: false);
+            EventHandler<SocketAsyncEventArgs> completion = delegate (object s, SocketAsyncEventArgs e)
             {
-                try
-                {
-                    socket.EndConnect(asyncResult);
-                    ConnectCompleted(true);
-                }
-                catch (Exception ex)
-                {
-                    DebugLog.WriteLine("TcpConnection", "Socket exception while completing connection request to {0}: {1}", destination, ex);
-                    ConnectCompleted(false);
-                }
+                handle.Set();
+            };
+
+            args.Completed += completion;
+
+            if (!socket.ConnectAsync(args))
+            {
+                completion(socket, args);
+            }
+
+            if (WaitHandle.WaitAny(new WaitHandle[] { handle, cancellationToken.Token.WaitHandle }, timeout) == 0)
+            {
+                ConnectCompleted(true);
             }
             else
             {
                 ConnectCompleted(false);
+                socket.Dispose();
             }
         }
 

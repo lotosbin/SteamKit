@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Steam Language", "Steam Language", "{9B9ED32F-938F-4CC1-B3EC-AE94BB102FC1}"
 	ProjectSection(SolutionItems) = preProject
 		..\Resources\SteamLanguage\emsg.steamd = ..\Resources\SteamLanguage\emsg.steamd
@@ -17,6 +19,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamLanguageParser", "..\Resources\SteamLanguageParser\SteamLanguageParser.csproj", "{EBF5B7D5-58F4-4F68-A997-1BE71A72F078}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{12C745D3-CA88-466A-86AD-62D54D9806E5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SteamKit2.Core", "SteamKit2\SteamKit2.Core.xproj", "{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamKit2.Portable", "SteamKit2.Portable\SteamKit2.Portable.csproj", "{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +62,30 @@ Global
 		{12C745D3-CA88-466A-86AD-62D54D9806E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12C745D3-CA88-466A-86AD-62D54D9806E5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{12C745D3-CA88-466A-86AD-62D54D9806E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Debug|x86.Build.0 = Debug|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Release|x86.ActiveCfg = Release|Any CPU
+		{20B282CA-4BEB-481D-ACA7-84E5B4B28EC9}.Release|x86.Build.0 = Release|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{E81A6FA3-E1FE-494F-8970-EA1AE3CB73BF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

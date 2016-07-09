@@ -22,7 +22,7 @@ namespace SteamKit2
     /// </summary>
     public class RSACrypto : IDisposable
     {
-        RSACryptoServiceProvider rsa;
+        RSA rsa;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SteamKit2.RSACrypto"/> class.
@@ -31,8 +31,8 @@ namespace SteamKit2
         public RSACrypto( byte[] key )
         {
             AsnKeyParser keyParser = new AsnKeyParser( key );
-
-            rsa = new RSACryptoServiceProvider();
+            
+            rsa = RSA.Create();
             rsa.ImportParameters( keyParser.ParseRSAPublicKey() );
         }
 
@@ -43,7 +43,7 @@ namespace SteamKit2
         /// <param name="input">The input to encrypt.</param>
         public byte[] Encrypt( byte[] input )
         {
-            return rsa.Encrypt( input, true );
+            return rsa.Encrypt( input, RSAEncryptionPadding.OaepSHA1);
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace SteamKit2
         /// </summary>
         public static byte[] SHAHash( byte[] input )
         {
-            using ( var sha = new SHA1Managed() )
+            using (var sha = SHA1.Create())
             {
-                return sha.ComputeHash( input );
+                return sha.ComputeHash(input);
             }
         }
 
@@ -76,7 +76,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] AESEncrypt( byte[] input, byte[] key, byte[] iv )
         {
-            using ( var aes = new RijndaelManaged() )
+            using (var aes = Aes.Create())
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 128;
@@ -84,13 +84,13 @@ namespace SteamKit2
                 aes.Mode = CipherMode.CBC;
                 aes.Padding = PaddingMode.PKCS7;
 
-                using ( var aesTransform = aes.CreateEncryptor( key, iv ) )
-                using ( var ms = new MemoryStream() )
-                using ( var cs = new CryptoStream( ms, aesTransform, CryptoStreamMode.Write ) )
+                using (var aesTransform = aes.CreateEncryptor(key, iv))
+                using (var ms = new MemoryStream())
+                using (var cs = new CryptoStream(ms, aesTransform, CryptoStreamMode.Write))
                 {
-                    cs.Write( input, 0, input.Length );
+                    cs.Write(input, 0, input.Length);
                     cs.FlushFinalBlock();
-                    
+
                     return ms.ToArray();
                 }
             }
@@ -101,7 +101,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] AESDecrypt( byte[] input, byte[] key, byte[] iv )
         {
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 128;
@@ -133,7 +133,7 @@ namespace SteamKit2
         {
             DebugLog.Assert( key.Length == 32, "CryptoHelper", "SymmetricEncrypt used with non 32 byte key!" );
 
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 256;
@@ -194,11 +194,16 @@ namespace SteamKit2
 
             using ( var hmac = new HMACSHA1( hmacSecret ) )
             {
-                hmac.TransformBlock( random, 0, random.Length, null, 0 );
-                hmac.TransformFinalBlock( input, 0, input.Length );
-                Array.Copy( hmac.Hash, iv, iv.Length - random.Length );
+                using (var ms = new MemoryStream())
+                {
+                    ms.Write(random, 0, random.Length);
+                    ms.Write(input, 0, input.Length);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    var hmacValue = hmac.ComputeHash(ms);
+                    Array.Copy(ms.ToArray(), iv, iv.Length - random.Length);
+                }
             }
-            
+
             return SymmetricEncryptWithIV( input, key, iv );
         }
 
@@ -227,10 +232,13 @@ namespace SteamKit2
             byte[] hmacBytes;
             using ( var hmac = new HMACSHA1( hmacSecret ) )
             {
-                hmac.TransformBlock( iv, iv.Length - 3, 3, null, 0 );
-                hmac.TransformFinalBlock( plaintextData, 0, plaintextData.Length );
-
-                hmacBytes = hmac.Hash;
+                using (var ms = new MemoryStream())
+                {
+                    ms.Write(iv, iv.Length - 3, 3);
+                    ms.Write(plaintextData, 0, plaintextData.Length);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    hmacBytes = hmac.ComputeHash(ms);
+                }
             }
 
             if ( !hmacBytes.Take( iv.Length - 3 ).SequenceEqual( iv.Take( iv.Length - 3 ) ) )
@@ -248,7 +256,7 @@ namespace SteamKit2
         {
             DebugLog.Assert( key.Length == 32, "CryptoHelper", "SymmetricDecrypt used with non 32 byte key!" );
 
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 256;
@@ -298,7 +306,7 @@ namespace SteamKit2
         public static byte[] VerifyAndDecryptPassword( byte[] input, string password )
         {
             byte[] key, hash;
-            using( SHA256 sha256 = SHA256Managed.Create() )
+            using( SHA256 sha256 = SHA256.Create() )
             {
                 byte[] password_bytes = Encoding.UTF8.GetBytes( password );
                 key = sha256.ComputeHash( password_bytes );
@@ -351,7 +359,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] GenerateRandomBlock( int size )
         {
-            using ( var rng = new RNGCryptoServiceProvider() )
+            using ( var rng = RandomNumberGenerator.Create() )
             {
                 byte[] block = new byte[ size ];
 

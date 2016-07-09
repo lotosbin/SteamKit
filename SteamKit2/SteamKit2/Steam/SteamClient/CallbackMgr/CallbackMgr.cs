@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace SteamKit2
 {
@@ -18,7 +19,7 @@ namespace SteamKit2
         /// </summary>
         public abstract class CallbackBase
         {
-            internal abstract Type CallbackType { get; }
+            internal abstract TypeInfo CallbackType { get; }
             internal abstract void Run( object callback );
         }
     }
@@ -45,7 +46,7 @@ namespace SteamKit2
         /// </summary>
         public Action<TCall> OnRun { get; set; }
 
-        internal override Type CallbackType { get { return typeof( TCall ); } }
+        internal override TypeInfo CallbackType { get { return typeof( TCall ).GetTypeInfo(); } }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Callback&lt;TCall&gt;"/> class.
@@ -257,7 +258,7 @@ namespace SteamKit2
         void Handle( ICallbackMsg call )
         {
             registeredCallbacks
-                .FindAll( callback => callback.CallbackType.IsAssignableFrom( call.GetType() ) ) // find handlers interested in this callback
+                .FindAll( callback => callback.CallbackType.IsAssignableFrom( call.GetType().GetTypeInfo() ) ) // find handlers interested in this callback
                 .ForEach( callback => callback.Run( call ) ); // run them
         }
 
