@@ -20,7 +20,7 @@ namespace SteamKit2
         private IPEndPoint destination;
         private Socket socket;
         private INetFilterEncryption netFilter;
-        private Thread netThread;
+        private Task netTask;
         private NetworkStream netStream;
         private BinaryReader netReader;
         private BinaryWriter netWriter;
@@ -123,11 +123,8 @@ namespace SteamKit2
                     netWriter = new BinaryWriter(netStream);
                     netFilter = null;
 
-                    netThread = new Thread(NetLoop);
-                    netThread.Name = "TcpConnection Thread";
+                    netTask = Task.Factory.StartNew(NetLoop, TaskCreationOptions.LongRunning);
                 }
-
-                netThread.Start();
 
                 OnConnected(EventArgs.Empty);
             }

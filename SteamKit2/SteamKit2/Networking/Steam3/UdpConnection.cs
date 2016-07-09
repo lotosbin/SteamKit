@@ -51,7 +51,7 @@ namespace SteamKit2
         /// </summary>
         private volatile int state;
 
-        private Thread netThread;
+        private Task netTask;
         private Socket sock;
         private IPEndPoint remoteEndPoint;
 
@@ -133,9 +133,7 @@ namespace SteamKit2
 
             filter = null;
 
-            netThread = new Thread(NetLoop);
-            netThread.Name = "UdpConnection Thread";
-            netThread.Start(endPointTask);
+            netTask = Task.Factory.StartNew(() => NetLoop(endPointTask), TaskCreationOptions.LongRunning);
         }
 
         /// <summary>
@@ -144,7 +142,7 @@ namespace SteamKit2
         /// </summary>
         public override void Disconnect()
         {
-            if ( netThread == null )
+            if ( netTask == null )
                 return;
 
             // if we think we aren't already disconnected, apply disconnecting unless we read back disconnected
@@ -161,7 +159,7 @@ namespace SteamKit2
             }
 
             // Graceful shutdown allows for the connection to empty its queue of messages to send
-            netThread.Join();
+            netTask.Wait();
 
             // Advance this the same way that steam does, when a socket gets reused.
             sourceConnId += 256;
@@ -366,15 +364,14 @@ namespace SteamKit2
         /// <summary>
         /// Processes incoming packets, maintains connection consistency, and oversees outgoing packets.
         /// </summary>
-        private void NetLoop(object param)
+        private void NetLoop(Task<IPEndPoint> epTask)
         {
             // Variables that will be used deeper in the function; locating them here avoids recreating
             // them since they don't need to be.
             var userRequestedDisconnect = false;
-            EndPoint packetSender = (EndPoint)new IPEndPoint(IPAddress.Any, 0);
+            EndPoint packetSender = new IPEndPoint(IPAddress.Any, 0);
             byte[] buf = new byte[2048];
-
-            var epTask = param as Task<IPEndPoint>;
+            
             try
             {
                 if ( epTask != null )
@@ -383,7 +380,7 @@ namespace SteamKit2
                 }
                 else
                 {
-                    DebugLog.WriteLine("UdpConnection", "Invalid endpoint supplied for connection: {0}", param);
+                    DebugLog.WriteLine("UdpConnection", "Null endpoint task supplied for connection.");
                 }
                 
             }
