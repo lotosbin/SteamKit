@@ -40,7 +40,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WMI_AVAILABLE;BINARY_SERIALIZATION_AVAILABLE;ISOLATED_STORAGE_AVAILABLE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WMI_AVAILABLE;BINARY_SERIALIZATION_AVAILABLE;ISOLATED_STORAGE_AVAILABLE;APPLICATIONEXCEPTION_AVAILABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,7 +53,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;WMI_AVAILABLE;BINARY_SERIALIZATION_AVAILABLE;ISOLATED_STORAGE_AVAILABLE</DefineConstants>
+    <DefineConstants>TRACE;WMI_AVAILABLE;BINARY_SERIALIZATION_AVAILABLE;ISOLATED_STORAGE_AVAILABLE;APPLICATIONEXCEPTION_AVAILABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -182,6 +182,7 @@
     <Compile Include="Types\JobID.cs" />
     <Compile Include="Types\MessageObject.cs" />
     <Compile Include="Types\PubFile.cs" />
+    <Compile Include="Util\ApplicationException.cs" />
     <Compile Include="Util\AsnKeyParser.cs" />
     <Compile Include="Util\Crc32.cs" />
     <Compile Include="Util\HardwareUtils.cs" />
