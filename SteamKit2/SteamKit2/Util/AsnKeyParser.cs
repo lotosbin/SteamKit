@@ -35,12 +35,16 @@ using System.Globalization;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
+#if BINARY_SERIALIZATION_AVAILABLE
 using System.Security.Permissions;
+#endif
 using System.Text;
 
 namespace SteamKit2
 {
+#if BINARY_SERIALIZATION_AVAILABLE
     [Serializable]
+#endif
     sealed class BerDecodeException : Exception
     {
         readonly int _position;
@@ -71,11 +75,13 @@ namespace SteamKit2
             _position = position;
         }
 
+#if BINARY_SERIALIZATION_AVAILABLE
         BerDecodeException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             _position = info.GetInt32("Position");
         }
+#endif
 
         public int Position
         {
@@ -95,12 +101,14 @@ namespace SteamKit2
             }
         }
 
+#if BINARY_SERIALIZATION_AVAILABLE
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
             info.AddValue("Position", _position);
         }
+#endif
     }
 	
 	

@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿#if ISOLATED_STORAGE_AVAILABLE
+using ProtoBuf;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
@@ -76,3 +77,4 @@ namespace SteamKit2.Discovery
         }
     }
 }
+#endif
