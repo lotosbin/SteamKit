@@ -261,6 +261,7 @@ namespace SteamKit2
                 return parameters;
             }
 
+#if DSAPARAMETERS_AVAILABLE
             public DSAParameters ParseDSAPublicKey()
             {
                 var parameters = new DSAParameters();
@@ -337,6 +338,7 @@ namespace SteamKit2
 
                 return parameters;
             }
+#endif
         }
 
         internal class AsnParser
