@@ -51,7 +51,7 @@ namespace SteamKit2
         /// </summary>
         public void Dispose()
         {
-            ( ( IDisposable )rsa ).Dispose();
+            rsa.Dispose();
         }
     }
 
@@ -65,7 +65,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] SHAHash( byte[] input )
         {
-            using ( var sha = new SHA1Managed() )
+            using ( var sha = SHA1.Create() )
             {
                 return sha.ComputeHash( input );
             }
@@ -76,7 +76,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] AESEncrypt( byte[] input, byte[] key, byte[] iv )
         {
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 128;
@@ -101,7 +101,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] AESDecrypt( byte[] input, byte[] key, byte[] iv )
         {
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 128;
@@ -133,7 +133,7 @@ namespace SteamKit2
         {
             DebugLog.Assert( key.Length == 32, "CryptoHelper", "SymmetricEncrypt used with non 32 byte key!" );
 
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 256;
@@ -298,7 +298,7 @@ namespace SteamKit2
         public static byte[] VerifyAndDecryptPassword( byte[] input, string password )
         {
             byte[] key, hash;
-            using( SHA256 sha256 = SHA256Managed.Create() )
+            using( var sha256 = SHA256.Create() )
             {
                 byte[] password_bytes = Encoding.UTF8.GetBytes( password );
                 key = sha256.ComputeHash( password_bytes );
@@ -315,7 +315,7 @@ namespace SteamKit2
             byte[] encrypted = new byte[ 32 ];
             Array.Copy( input, encrypted, encrypted.Length );
 
-            return CryptoHelper.SymmetricDecrypt( encrypted, key );
+            return SymmetricDecrypt( encrypted, key );
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace SteamKit2
         /// </summary>
         public static byte[] GenerateRandomBlock( int size )
         {
-            using ( var rng = new RNGCryptoServiceProvider() )
+            using ( var rng = RandomNumberGenerator.Create() )
             {
                 byte[] block = new byte[ size ];
 
