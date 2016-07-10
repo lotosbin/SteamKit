@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-#if WMI_AVAILABLE
+#if !NETSTANDARD
 using System.Management;
 #endif
 using System.Net.NetworkInformation;
@@ -104,7 +104,7 @@ namespace SteamKit2
 
         public override byte[] GetDiskId()
         {
-#if WMI_AVAILABLE
+#if !NETSTANDARD
             var activePartition = WmiQuery(
                 @"SELECT DiskIndex FROM Win32_DiskPartition
                   WHERE Bootable = 1"
@@ -141,7 +141,7 @@ namespace SteamKit2
 #endif
         }
 
-#if WMI_AVAILABLE
+#if !NETSTANDARD
         IEnumerable<ManagementObject> WmiQuery( string queryFormat, params object[] args )
         {
             string query = string.Format( queryFormat, args );
