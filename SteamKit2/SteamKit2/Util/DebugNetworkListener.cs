@@ -7,6 +7,7 @@
 
 using System;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 
 namespace SteamKit2
@@ -49,7 +50,7 @@ namespace SteamKit2
         /// </summary>
         public NetHookNetworkListener()
         {
-            var uri = new Uri( System.Reflection.Assembly.GetExecutingAssembly().CodeBase );
+            var uri = new Uri( GetType().GetTypeInfo().Assembly.CodeBase );
 
             LogDirectory = Path.Combine(
                 Path.GetDirectoryName( uri.LocalPath ),
