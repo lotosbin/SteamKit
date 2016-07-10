@@ -72,7 +72,7 @@ namespace SteamKit2
                 }
                 catch ( AggregateException ex ) when (ex.InnerException != null)
                 {
-                    ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+                    ExceptionDispatchInfo.Capture( ex.InnerException ).Throw();
                 }
 
                 return callTask.Result;
@@ -142,7 +142,7 @@ namespace SteamKit2
                 }
                 catch ( AggregateException ex ) when (ex.InnerException != null)
                 {
-                    ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+                    ExceptionDispatchInfo.Capture( ex.InnerException ).Throw();
                 }
 
                 result = resultTask.Result;
