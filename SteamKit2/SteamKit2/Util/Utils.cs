@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -184,7 +185,7 @@ namespace SteamKit2
         public static T[] GetAttributes<T>( this Type type, bool inherit = false )
             where T : Attribute
         {
-            return type.GetCustomAttributes( typeof( T ), inherit ) as T[];
+            return type.GetTypeInfo().GetCustomAttributes( typeof( T ), inherit ) as T[];
         }
     }
 
