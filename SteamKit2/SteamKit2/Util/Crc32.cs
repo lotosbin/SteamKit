@@ -2,20 +2,19 @@
 // from: http://damieng.com/blog/2006/08/08/calculating_crc32_in_c_and_net
 //
 
-using System;
 using System.Security.Cryptography;
 
 namespace SteamKit2
 {
     class Crc32 : HashAlgorithm
     {
-        public const UInt32 DefaultPolynomial = 0xedb88320;
-        public const UInt32 DefaultSeed = 0xffffffff;
+        public const uint DefaultPolynomial = 0xedb88320;
+        public const uint DefaultSeed = 0xffffffff;
 
-        private UInt32 hash;
-        private UInt32 seed;
-        private UInt32[] table;
-        private static UInt32[] defaultTable;
+        uint hash;
+        uint seed;
+        uint[] table;
+        static uint[] defaultTable;
 
         public Crc32()
         {
@@ -24,7 +23,7 @@ namespace SteamKit2
             Initialize();
         }
 
-        public Crc32( UInt32 polynomial, UInt32 seed )
+        public Crc32( uint polynomial, uint seed )
         {
             table = InitializeTable( polynomial );
             this.seed = seed;
@@ -43,8 +42,7 @@ namespace SteamKit2
 
         protected override byte[] HashFinal()
         {
-            byte[] hashBuffer = UInt32ToBigEndianBytes( ~hash );
-            this.HashValue = hashBuffer;
+            byte[] hashBuffer = uintToBigEndianBytes( ~hash );
             return hashBuffer;
         }
 
@@ -53,30 +51,30 @@ namespace SteamKit2
             get { return 32; }
         }
 
-        public static UInt32 Compute( byte[] buffer )
+        public static uint Compute( byte[] buffer )
         {
             return ~CalculateHash( InitializeTable( DefaultPolynomial ), DefaultSeed, buffer, 0, buffer.Length );
         }
 
-        public static UInt32 Compute( UInt32 seed, byte[] buffer )
+        public static uint Compute(uint seed, byte[] buffer )
         {
             return ~CalculateHash( InitializeTable( DefaultPolynomial ), seed, buffer, 0, buffer.Length );
         }
 
-        public static UInt32 Compute( UInt32 polynomial, UInt32 seed, byte[] buffer )
+        public static uint Compute(uint polynomial, uint seed, byte[] buffer )
         {
             return ~CalculateHash( InitializeTable( polynomial ), seed, buffer, 0, buffer.Length );
         }
 
-        private static UInt32[] InitializeTable( UInt32 polynomial )
+        private static uint[] InitializeTable( uint polynomial )
         {
             if ( polynomial == DefaultPolynomial && defaultTable != null )
                 return defaultTable;
 
-            UInt32[] createTable = new UInt32[ 256 ];
+            uint[] createTable = new uint[ 256 ];
             for ( int i = 0 ; i < 256 ; i++ )
             {
-                UInt32 entry = ( UInt32 )i;
+                uint entry = ( uint )i;
                 for ( int j = 0 ; j < 8 ; j++ )
                     if ( ( entry & 1 ) == 1 )
                         entry = ( entry >> 1 ) ^ polynomial;
@@ -91,9 +89,9 @@ namespace SteamKit2
             return createTable;
         }
 
-        private static UInt32 CalculateHash( UInt32[] table, UInt32 seed, byte[] buffer, int start, int size )
+        private static uint CalculateHash( uint[] table, uint seed, byte[] buffer, int start, int size )
         {
-            UInt32 crc = seed;
+            uint crc = seed;
             for ( int i = start ; i < size ; i++ )
                 unchecked
                 {
@@ -102,14 +100,14 @@ namespace SteamKit2
             return crc;
         }
 
-        private byte[] UInt32ToBigEndianBytes( UInt32 x )
+        private byte[] uintToBigEndianBytes( uint x )
         {
             return new byte[] {
-			    (byte)((x >> 24) & 0xff),
-			    (byte)((x >> 16) & 0xff),
-			    (byte)((x >> 8) & 0xff),
-			    (byte)(x & 0xff)
-		    };
+                (byte)((x >> 24) & 0xff),
+                (byte)((x >> 16) & 0xff),
+                (byte)((x >> 8) & 0xff),
+                (byte)(x & 0xff)
+            };
         }
     }
 }
