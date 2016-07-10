@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-
+using System.Net.Http;
 using SteamKit2;
 
 //
@@ -77,7 +77,8 @@ namespace Sample6_WebAPI
 
                 // additionally, if the API you are using requires you to POST or use an SSL connection, you may specify
                 // these settings with the "method" and "secure" reserved parameters
-                steamUserAuth.AuthenticateUser( someParam: "someValue", method: WebRequestMethods.Http.Post, secure: true );
+                // "method" can be a string or an HttpMethod object
+                steamUserAuth.AuthenticateUser( someParam: "someValue", method: HttpMethod.Post, secure: true );
             }
 
             // if you are using a language that does not have dynamic object support, or you otherwise don't wish to use it
