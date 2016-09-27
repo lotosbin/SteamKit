@@ -40,6 +40,7 @@ namespace SteamKit2
 
         public static EOSType GetOSType()
         {
+#if !NETSTANDARD
             var osVer = Environment.OSVersion;
             var ver = osVer.Version;
 
@@ -148,6 +149,24 @@ namespace SteamKit2
                 default:
                     return EOSType.Unknown;
             }
+#else
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                return EOSType.WinUnknown;
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                return EOSType.MacOSUnknown;
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                return EOSType.LinuxUnknown;
+            }
+            else
+            {
+                return EOSType.Unknown;
+            }
+#endif
         }
 
         public static bool IsRunningOnDarwin()

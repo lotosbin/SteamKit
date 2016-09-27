@@ -22,7 +22,7 @@ namespace SteamKit2
     /// </summary>
     public class RSACrypto : IDisposable
     {
-        RSACryptoServiceProvider rsa;
+        RSA rsa;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SteamKit2.RSACrypto"/> class.
@@ -32,7 +32,7 @@ namespace SteamKit2
         {
             AsnKeyParser keyParser = new AsnKeyParser( key );
 
-            rsa = new RSACryptoServiceProvider();
+            rsa = RSA.Create();
             rsa.ImportParameters( keyParser.ParseRSAPublicKey() );
         }
 
@@ -43,7 +43,7 @@ namespace SteamKit2
         /// <param name="input">The input to encrypt.</param>
         public byte[] Encrypt( byte[] input )
         {
-            return rsa.Encrypt( input, true );
+            return rsa.Encrypt( input, RSAEncryptionPadding.OaepSHA1 );
         }
 
         /// <summary>
@@ -194,9 +194,12 @@ namespace SteamKit2
 
             using ( var hmac = new HMACSHA1( hmacSecret ) )
             {
-                hmac.TransformBlock( random, 0, random.Length, null, 0 );
-                hmac.TransformFinalBlock( input, 0, input.Length );
-                Array.Copy( hmac.Hash, iv, iv.Length - random.Length );
+                byte[] hashInput = new byte[random.Length + input.Length];
+                Array.Copy(random, 0, hashInput, 0, random.Length);
+                Array.Copy(input, 0, hashInput, random.Length, input.Length);
+                byte[] hash = hmac.ComputeHash(hashInput);
+
+                Array.Copy( hash, iv, iv.Length - random.Length );
             }
             
             return SymmetricEncryptWithIV( input, key, iv );
@@ -227,10 +230,11 @@ namespace SteamKit2
             byte[] hmacBytes;
             using ( var hmac = new HMACSHA1( hmacSecret ) )
             {
-                hmac.TransformBlock( iv, iv.Length - 3, 3, null, 0 );
-                hmac.TransformFinalBlock( plaintextData, 0, plaintextData.Length );
+                byte[] hashInput = new byte[3 + plaintextData.Length];
+                Array.Copy(iv, iv.Length - 3, hashInput, 0, 3);
+                Array.Copy(plaintextData, 0, hashInput, 3, plaintextData.Length);
 
-                hmacBytes = hmac.Hash;
+                hmacBytes = hmac.ComputeHash(hashInput);
             }
 
             if ( !hmacBytes.Take( iv.Length - 3 ).SequenceEqual( iv.Take( iv.Length - 3 ) ) )
@@ -248,7 +252,7 @@ namespace SteamKit2
         {
             DebugLog.Assert( key.Length == 32, "CryptoHelper", "SymmetricDecrypt used with non 32 byte key!" );
 
-            using ( var aes = new RijndaelManaged() )
+            using ( var aes = Aes.Create() )
             {
                 aes.BlockSize = 128;
                 aes.KeySize = 256;

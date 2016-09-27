@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿#if !NETSTANDARD
+using ProtoBuf;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
@@ -22,7 +23,7 @@ namespace SteamKit2.Discovery
         /// </summary>
         public IsolatedStorageServerListProvider()
         {
-            isolatedStorage = IsolatedStorageFile.GetUserStoreForAssembly();
+            isolatedStorage = IsolatedStorageFile.GetUserStoreForApplication();
         }
 
         /// <summary>
@@ -76,3 +77,4 @@ namespace SteamKit2.Discovery
         }
     }
 }
+#endif

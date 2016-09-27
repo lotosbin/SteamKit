@@ -46,11 +46,6 @@ namespace SevenZip.Compression.RangeCoder
 			Stream.Flush();
 		}
 
-		public void CloseStream()
-		{
-			Stream.Close();
-		}
-
 		public void Encode(uint start, uint size, uint total)
 		{
 			Low += start * (Range /= total);
@@ -142,11 +137,6 @@ namespace SevenZip.Compression.RangeCoder
 		{
 			// Stream.ReleaseStream();
 			Stream = null;
-		}
-
-		public void CloseStream()
-		{
-			Stream.Close();
 		}
 
 		public void Normalize()

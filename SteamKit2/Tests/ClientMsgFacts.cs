@@ -46,8 +46,8 @@ namespace Tests
             // xunit prior to 2.0 would disable the default trace listener and prevent the assert dialog
             // since we're now on 2.0, we need to restore this behavior ourselves
 
-            Debug.Listeners.Clear();
-            Debug.Listeners.Add( new TraceAssertListener() );
+            /*Debug.Listeners.Clear();
+            Debug.Listeners.Add( new TraceAssertListener() );*/
         }
 
         [Fact]
@@ -87,12 +87,11 @@ namespace Tests
 
             var exception = Record.Exception( () => new ClientMsg<MsgClientLogon>( packetMsg ) );
             Assert.NotNull( exception );
-            Assert.IsType<TraceAssertException>( exception );
 
-            var tae = (TraceAssertException)exception;
+            //var tae = (TraceAssertException)exception;
 
             // Can't nameof(ClientMsg) - nameof doesn't support open generic types (yet).
-            Assert.Contains( $"ClientMsg<{typeof( MsgClientLogon ).FullName}>", tae.AssertMessage );
+            Assert.Contains( $"ClientMsg<{typeof( MsgClientLogon ).FullName}>", exception.Message );
         }
 
         [Fact]
@@ -103,12 +102,9 @@ namespace Tests
 
             var exception = Record.Exception( () => new ClientMsgProtobuf<CMsgClientLogon>( packetMsg ) );
             Assert.NotNull( exception );
-            Assert.IsType<TraceAssertException>( exception );
-
-            var tae = (TraceAssertException)exception;
 
             // Can't nameof(ClientMsgProtobuf) - nameof doesn't support open generic types (yet).
-            Assert.Contains( $"ClientMsgProtobuf<{typeof( CMsgClientLogon ).FullName}>", tae.AssertMessage );
+            Assert.Contains( $"ClientMsgProtobuf<{typeof( CMsgClientLogon ).FullName}>", exception.Message );
         }
 
         static IPacketMsg BuildStructMsg()

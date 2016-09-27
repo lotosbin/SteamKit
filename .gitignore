@@ -119,3 +119,6 @@ cryptopp/
 # misc
 Thumbs.db
 .DS_Store
+Resources/NetHook2/NetHook2/protobuf-2.5.0/
+project.lock.json
+.vs

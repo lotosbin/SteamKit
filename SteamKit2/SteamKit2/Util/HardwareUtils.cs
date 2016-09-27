@@ -7,7 +7,9 @@ using System.Management;
 #endif
 using System.Net.NetworkInformation;
 using System.Text;
+#if NETSTANDARD
 using Microsoft.Win32;
+#endif
 using SteamKit2.Util.MacHelpers;
 
 using static SteamKit2.Util.MacHelpers.LibC;
@@ -23,6 +25,7 @@ namespace SteamKit2
     {
         public static MachineInfoProvider GetProvider()
         {
+#if !NETSTANDARD
             switch ( Environment.OSVersion.Platform )
             {
                 case PlatformID.Win32NT:
@@ -39,6 +42,20 @@ namespace SteamKit2
                         return new LinuxInfoProvider();
                     }
             }
+#else
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                return new WindowsInfoProvider();
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                return new OSXInfoProvider();
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                return new LinuxInfoProvider();
+            }
+#endif
 
             return new DefaultInfoProvider();
         }
